@@ -1,5 +1,35 @@
-<html>
-    <head>Javascript Ninja</head>
-    <body><h2>
-        My GitHub Page</h2></body>
+﻿<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Javascript Ninja. Nin Nin!</title></head>
+        <script type="text/javascript" src="js/paper.js"></script>
+
+        <script type="text/paperscript" canvas="canvas">
+            var path = new Path.Circle(new Point(80, 50), 35);
+            path.fillColor = 'red';
+
+            // Create a new layer:
+            var secondLayer = new Layer();
+
+            // The second path is added as a child of the second layer:
+            var secondPath = new Path.Circle(new Point(120, 50), 35);
+            secondPath.fillColor = '#00FF00';
+        </script>
+    <body>
+        <h2>แนะนำตัวกันก่อน</h2>
+        <p>สวัสดีครับ นิน นิน</p>
+        <p>งานเขียนในนี้ของผม จะพยายามรวบรวมเทคนิค Javascript ของนินจา เอาไว้ให้ได้มากที่สุด</p>
+        <p>แรงบรรดาลใจของผมในภาษา Javascript นี้เริ่มมาจาก ผมเริ่มเขียนภาษาจาก VB6 -> C++ -> JAVA -> C# ไม่รู้จัก javascript เลย จนกระทั้งผมได้เขียนมันเมื่อไม่นานมานี้ พอเขียนมันมากเข้า มากเข้า เราก็เริ่มหลงไหลมันมากขึ้นเรื่อยๆแล้วละสิ</p>
+        <p>ไม่ได้ละต้องค้นคว้าจริงจังกันไปเลยจึงเกิดเป็นงานเขียน ชิ้นนี้ขึ้นมา</p>
+        <p>หัวข้อที่รวมไว้ตอนนี้ ก็มีดังนี้</p>
+        <ul>
+            <li>library(อาวุธ)Javascript ที่นินจาจะต้องสนใจ</li>
+            <li>จะเป็นนินจาที่เก่งกาจได้ต้องเรียนรู้ javascript ขั้นสูง</li>
+            <li>การทดสอบ javascript ของนินจา</li>
+            <li>ความสามารของ javascript ที่ทำให้นินจา cross-browser(เก่งได้ทุกสภาวะ)</li>
+        </ul>
+        <div>
+            <canvas id="canvas" resize></canvas>
+        </div>
+    </body>
 </html>
