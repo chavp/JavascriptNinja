@@ -5,15 +5,47 @@
         <script type="text/javascript" src="js/paper.js"></script>
 
         <script type="text/paperscript" canvas="canvas">
-            var path = new Path.Circle(new Point(80, 50), 35);
-            path.fillColor = 'red';
+            var c1 = new Path.Circle(new Point(80, 50), 35);
+            c1.fillColor = 'red';
 
-            // Create a new layer:
-            var secondLayer = new Layer();
+            var c2 = new Path.Circle(new Point(120, 50), 35);
+            c2.fillColor = '#00FF00';
 
-            // The second path is added as a child of the second layer:
-            var secondPath = new Path.Circle(new Point(120, 50), 35);
-            secondPath.fillColor = '#00FF00';
+            var hitOptions = {
+                segments: true,
+                stroke: true,
+                fill: true,
+                tolerance: 5
+            };
+            var segment, path;
+            function onMouseDown(event) {
+                segment = path = null;
+                var hitResult = project.hitTest(event.point, hitOptions);
+                if (hitResult) {
+                    path = hitResult.item;
+                    if (hitResult.type == 'segment') {
+                        segment = hitResult.segment;
+                    } 
+                }
+                movePath = hitResult.type == 'fill';
+                if (movePath)
+                    project.activeLayer.addChild(hitResult.item);
+            }
+            function onMouseMove(event) {
+                var hitResult = project.hitTest(event.point, hitOptions);
+                project.activeLayer.selected = false;
+                if (hitResult && hitResult.item)
+                    hitResult.item.selected = true;
+            }
+            function onMouseDrag(event) {
+//                if (segment) {
+//                    segment.point = event.point;
+//                    path.smooth();
+//                }
+
+                if (movePath)
+                    path.position += event.delta;
+            }
         </script>
     <body>
         <h2>แนะนำตัวกันก่อน</h2>
