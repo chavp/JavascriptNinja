@@ -5,11 +5,18 @@
         <script type="text/javascript" src="js/paper.js"></script>
 
         <script type="text/paperscript" canvas="canvas">
-            var c1 = new Path.Circle(new Point(80, 50), 35);
-            c1.fillColor = 'red';
-
-            var c2 = new Path.Circle(new Point(120, 50), 35);
-            c2.fillColor = '#00FF00';
+            var c1 = new Path.Circle(new Point(80, 50), 25);
+            c1.style = {
+                fillColor: 'black',
+                strokeColor: 'white',
+                strokeWidth: 5
+            };
+            var c2 = new Path.Circle(new Point(220, 50), 25);
+            c2.style = {
+                fillColor: 'black',
+                strokeColor: 'black',
+                strokeWidth: 5
+            };
 
             var hitOptions = {
                 segments: true,
@@ -60,7 +67,7 @@
             <li>การทดสอบ javascript ของนินจา</li>
             <li>ความสามารของ javascript ที่ทำให้นินจา cross-browser(เก่งได้ทุกสภาวะ)</li>
         </ul>
-        <div>
+        <div style="background-color:GrayText">
             <canvas id="canvas" resize></canvas>
         </div>
     </body>
